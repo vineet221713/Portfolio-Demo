@@ -1,0 +1,583 @@
+@import url(./normalize.css);
+
+:root {
+  --color-primary: #ff6464;
+  --color-secondary: #00a8cc;
+  --color-dark: #21243d;
+  --color-light: #8695a4;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Typography */
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--color-dark);
+  font-size: 1.8rem;
+  line-height: 1.5;
+}
+
+h1 {
+  margin: 4.3rem 3.15rem 2.1rem;
+  line-height: 1.25;
+  font-size: 3.2rem;
+  font-weight: bold;
+}
+
+h2 {
+  line-height: 3.33;
+  font-size: 1.8rem;
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  line-height: 1.36;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+p {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 4.4rem;
+    margin-left: 0;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+  }
+
+  h3 {
+    margin-top: 0;
+    font-size: 2.6rem;
+  }
+}
+
+/* Links */
+
+a {
+  text-decoration: none;
+}
+
+.link--dark {
+  color: var(--color-dark);
+}
+
+.link--small {
+  color: var(--color-secondary);
+  font-size: inherit;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-dark);
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+a:visited {
+  color: var(--color-dark);
+}
+
+/* Buttons */
+
+.btn {
+  border: 0;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 500;
+  outline: 0;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.3s;
+  display: inline-block;
+  margin-bottom: 7rem;
+}
+
+.btn--primary {
+  color: #fff;
+  background: var(--color-primary);
+}
+
+.btn--primary:hover {
+  background: #fd7d7d;
+  color: #fff;
+}
+
+.btn--primary:visited {
+  color: #fff;
+}
+
+.btn--top {
+  margin-bottom: 1rem;
+}
+
+/* Images */
+
+.my_image {
+  display: block;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 100%;
+  object-fit: cover;
+  margin: auto;
+  box-shadow: -7px 7px 2px #edf7fa;
+}
+
+@media screen and (min-width: 768px) {
+  .my_image {
+    order: 2;
+    margin-top: 2.144rem;
+  }
+}
+
+.featured_image {
+  margin: auto;
+  max-width: 34rem;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+/* Badges */
+
+.badge {
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0 2rem;
+  white-space: nowrap;
+  background: var(--color-dark);
+  color: #fff;
+  margin-bottom: 2.4rem;
+}
+
+/* Grids */
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid--featured {
+  display: grid;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+  align-items: start;
+}
+
+.grid--header {
+  display: grid;
+  padding-bottom: 2rem;
+  padding-top: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid--featured {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+
+  .grid--header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+}
+
+/* Cards */
+
+.card {
+  background: rgb(255, 255, 255);
+  margin: auto;
+  padding: 1rem 2rem 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card--background {
+  background: #edf7fa;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.card--heading {
+  margin-bottom: 0;
+  margin-top: 3rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.view {
+  display: none;
+}
+
+.container {
+  position: relative;
+  max-width: 90vw;
+  margin: auto;
+  overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 86rem;
+    margin: auto;
+  }
+  .card--background {
+    padding: 2rem 14rem 2rem;
+  }
+
+  .header {
+    text-align: unset;
+  }
+
+  .card--paragraph {
+    font-size: 2.2rem;
+    display: inline-block;
+  }
+
+  .view {
+    color: var(--color-secondary);
+    font-size: 1.6rem;
+    display: inline-block;
+    position: absolute;
+    top: 0.25rem;
+    right: 0;
+  }
+}
+
+/* Featured Works */
+
+.featured--light {
+  opacity: 0.5;
+}
+
+.featured_para {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .card--featured {
+    background: rgb(255, 255, 255);
+    margin: auto;
+    padding: 0 2rem 0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+}
+
+/* footer */
+
+.flex {
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+}
+
+.footer-line {
+  margin: auto;
+}
+
+.flex-line {
+  padding-top: 0;
+}
+
+.flex-footer {
+  margin-top: 9rem;
+}
+
+/* Header */
+
+.header-para {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .header-para {
+    text-align: unset;
+  }
+}
+
+/* Lists */
+.list {
+  list-style: none; /*to get rid of bullet points and the default left padding that all browsers apply to lists*/
+  padding-left: 0;
+}
+
+/* Icons */
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.icon--dark {
+  fill: var(--color-dark);
+}
+
+/* Collapsibles */
+
+.collapsible__content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+
+/* Navigation Bar */
+.nav {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  align-items: center;
+}
+
+.nav__list {
+  width: 100%;
+  margin: 0;
+}
+
+.nav__item {
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid #222;
+}
+
+.nav__item > a {
+  color: var(--color-dark);
+  transition: color 0.3s;
+}
+
+.nav__item > a:hover {
+  color: var(--color-primary);
+}
+
+.nav__toggler {
+  opacity: 1;
+  transition: box-shadow 0.15s;
+  cursor: pointer;
+  transform: translateY(5px);
+}
+
+.nav.collapsible--expanded .nav__toggler {
+  /* '.nav.collapsible--expanded' ensures that this style only gets applied to those elements which have nav class and as well as collapsible--expaneded class (so this style will only be applied to those a navigation bar which is expanded) */
+  opacity: 1;
+  box-shadow: 0 0 0 3px #666;
+  border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav__toggler {
+    display: none;
+  }
+
+  .nav__list {
+    width: auto;
+    display: flex;
+    font-size: 1.6rem;
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  .nav__item {
+    border: 0;
+  }
+}
+
+/* Form Styling */
+
+.container--form {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem 0.7rem;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #7db0fb;
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(24, 117, 255, 0.25);
+}
+
+button {
+  background: var(--color-primary);
+  color: #fff;
+  border: 0;
+  padding: 0.5rem 0.7rem;
+  border-radius: 5px;
+  outline: 0;
+  cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 3rem;
+}
+
+.form-container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-dark);
+  display: block;
+}
+
+/* Blog */
+
+.blog--card .card--featured {
+  margin-left: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 0;
+  margin-top: 3rem;
+}
+
+.blog--card h1 {
+  margin-left: 0;
+  margin-bottom: 3.5rem;
+}
+
+/* Works */
+
+.blog--card .card--works {
+  border-bottom: none;
+  margin-top: 0;
+}
+
+/* Quotes */
+.quote {
+  font-size: 3rem;
+  font-style: italic;
+  color: var(--color-body-darker);
+  line-height: 1.3;
+}
+
+.quote__text::before {
+  content: open-quote;
+}
+
+.quote__text::after {
+  content: close-quote;
+}
+
+.quote__author {
+  font-size: 3rem;
+  font-weight: 500;
+  font-style: normal;
+  margin-bottom: 4rem;
+  position: absolute;
+  right: 11rem;
+  bottom: 0;
+}
+
+.quote__organization {
+  color: var(--color-headings);
+  opacity: 0.4;
+  font-size: 2rem;
+  font-style: normal;
+}
+
+.quote__line {
+  position: relative;
+  bottom: 10px;
+  height: 0;
+}
+
+.quote--container {
+  position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+  .quote {
+    font-size: 2rem;
+  }
+
+  .quote__author {
+    font-size: 2.4rem;
+  }
+
+  .quote__organization {
+    font-size: 1.6rem;
+  }
+}
+
+/* Media */
+
+/* Media */
+.media {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+.media__title {
+  margin-top: 0;
+}
+
+.media__body {
+  margin: 0 2rem;
+}
+
+.media__image {
+  margin-top: 1rem;
+}
